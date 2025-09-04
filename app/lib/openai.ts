@@ -1,10 +1,22 @@
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-  dangerouslyAllowBrowser: true,
-});
+let openai: OpenAI | null = null;
+
+function getOpenAIClient(): OpenAI {
+  if (!openai) {
+    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      throw new Error('OpenAI API key is not configured');
+    }
+    
+    openai = new OpenAI({
+      apiKey,
+      baseURL: "https://openrouter.ai/api/v1",
+      dangerouslyAllowBrowser: true,
+    });
+  }
+  return openai;
+}
 
 export interface ParsedQuery {
   cuisine: string[];
@@ -34,7 +46,7 @@ export async function parseRestaurantQuery(query: string): Promise<ParsedQuery> 
     }
     `;
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient().chat.completions.create({
       model: "google/gemini-2.0-flash-001",
       messages: [
         {
@@ -86,7 +98,7 @@ export async function generateRestaurantRecommendations(restaurants: any[], quer
     Return as JSON array.
     `;
 
-    const completion = await openai.chat.completions.create({
+    const completion = await getOpenAIClient().chat.completions.create({
       model: "google/gemini-2.0-flash-001",
       messages: [
         {
