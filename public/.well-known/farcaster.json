@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "CraveLocal",
+    "subtitle": "Built with Zara",
+    "description": "CraveLocal is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app",
+    "splashImageUrl": "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app/image.png",
+    "tagline": "CraveLocal",
+    "screenshotUrls": [
+      "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app/screenshot.png",
+      "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://cffe8c6b804f4e56aa36dd87211d2078-5nh4-8mgfqg6dp-vistara.vercel.app/api/webhook"
+  }
+}
