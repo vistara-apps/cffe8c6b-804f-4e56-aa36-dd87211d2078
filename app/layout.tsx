@@ -6,6 +6,7 @@ import { Providers } from './providers';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cravelocal.vercel.app'),
   title: 'CraveLocal - Discover Your Next Favorite Restaurant',
   description: 'Find hyper-local, mood-based restaurants tailored to your cravings',
   openGraph: {
